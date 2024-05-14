@@ -1,45 +1,56 @@
-/* SubmissionTable.css */
-
-.submission-table-wrapper {
-   display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: auto; /* Set the width to 100% */
-  max-width: 800px; 
-  align-items: center;
-  align-content: center;
+/* General styling */
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.25;
 }
 
+/* Submission table wrapper */
+.submission-table-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+/* Header container */
 .header-container {
-  padding: 8px;
+  width: 100%;
   background-color: #f2f2f2;
   border-bottom: 1px solid #ccc;
+  padding: 10px;
 }
 
+/* Filter container */
 .filter-container {
   display: flex;
   align-items: center;
   width: 100%;
 }
 
+/* Filter input */
 .filter-input {
   flex: 1;
-  padding: 4px;
+  padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   margin-right: 8px;
 }
 
+/* Search icon */
 .search-icon {
   font-size: 20px;
   color: #aaa;
 }
 
+/* Table content */
 .content {
-  flex: 1;
-  /* overflow-y: auto; */
+  width: 100%;
+  overflow-x: auto;
 }
 
+/* Submission table */
 .submission-table {
   width: 100%;
   border-collapse: collapse;
@@ -47,36 +58,40 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.submission-table th,
-.submission-table td {
-  border: 1px solid #ccc;
-  padding: 8px;
-}
-
+/* Table header */
 .submission-table th {
   background-color: #f2f2f2;
 }
 
-@media screen and (max-width: 768px) {
-  .submission-table th,
-  .submission-table td {
-    font-size: 14px;
-    padding: 6px;
+/* Table data cells */
+.submission-table td {
+  border: 1px solid #ccc;
+  padding: 12px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: #333;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+  /* Hide table headers on mobile */
+  .submission-table th {
+    display: none;
+  }
+
+  /* Display table data in block format */
+  .submission-table tr {
+    display: block;
+    margin-bottom: 10px; /* Add space between users */
   }
 }
 
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-  .submission-table th,
-  .submission-table td {
-    font-size: 16px;
-    padding: 8px;
-  }
-}
-
-@media screen and (min-width: 1025px) {
-  .submission-table th,
-  .submission-table td {
-    font-size: 18px;
-    padding: 10px;
+/* Custom styling for table headers on mobile */
+@media screen and (max-width: 600px) {
+  .header-mobile {
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 5px;
   }
 }

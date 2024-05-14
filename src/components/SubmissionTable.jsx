@@ -17,9 +17,9 @@ function SubmissionTable() {
       { Header: "Email", accessor: "email" },
       { Header: "Phone", accessor: "phone" },
       { Header: "Service", accessor: "service" },
-      { Header: "Beverage", accessor: "beverage" },
-      { Header: "Cleanliness", accessor: "cleanliness" },
-      { Header: "Overall Experience", accessor: "overallExperience" },
+      // { Header: "Beverage", accessor: "beverage" },
+      // { Header: "Cleanliness", accessor: "cleanliness" },
+      // { Header: "Overall Experience", accessor: "overallExperience" },
     ],
     []
   );
@@ -58,6 +58,35 @@ function SubmissionTable() {
         </div>
       </div>
       <div className="content">
+        <table {...getTableProps()} className="submission-table">
+          <thead>
+            {headerGroups.map((headerGroup) => (
+              <tr key={headerGroup.id} {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map((column) => (
+                  <th key={column.id} {...column.getHeaderProps()}>
+                    {column.render("Header")}
+                  </th>
+                ))}
+              </tr>
+            ))}
+          </thead>
+          <tbody {...getTableBodyProps()}>
+            {rows.map((row) => {
+              prepareRow(row);
+              return (
+                <tr {...row.getRowProps()}>
+                  {row.cells.map((cell) => {
+                    return (
+                      <td {...cell.getCellProps()}>{cell.render("Cell")}</td>
+                    );
+                  })}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+      <div>
         <table {...getTableProps()} className="submission-table">
           <thead>
             {headerGroups.map((headerGroup) => (

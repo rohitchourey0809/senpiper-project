@@ -91,7 +91,7 @@ function Form({ onSubmit }) {
         <PhoneInput
           id="phone"
           name="phone"
-          country="US" // Set default country
+          defaultCountry="IN"
           value={formData.phone}
           onChange={(value) => handleChange("phone", value)}
           placeholder="Enter phone number"
