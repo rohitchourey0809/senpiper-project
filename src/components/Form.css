@@ -1,0 +1,85 @@
+/* Form.css */
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+.react-phone-number-input__input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+.react-phone-number-input__input:focus {
+  border-color: #007bff;
+}
+
+.error {
+  color: red;
+  font-size: 12px;
+}
+
+.checkbox-group label {
+  display: block;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.checkbox-group label input[type="radio"] {
+  margin-right: 5px;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+@media screen and (max-width: 600px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  .react-phone-number-input__input {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  .react-phone-number-input__input {
+    width: 80%;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  .react-phone-number-input__input {
+    width: 50%;
+  }
+}

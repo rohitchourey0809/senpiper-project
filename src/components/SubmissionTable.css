@@ -1,0 +1,60 @@
+/* SubmissionTable.css */
+/* SubmissionTable.css */
+
+.submission-table-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust this as needed */
+}
+
+.submission-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Other styles for the table */
+
+
+.submission-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.submission-table th,
+.submission-table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+.submission-table th {
+  background-color: #f2f2f2;
+}
+
+@media screen and (max-width: 600px) {
+  .submission-table th,
+  .submission-table td {
+    font-size: 14px;
+    padding: 6px;
+  }
+}
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .submission-table th,
+  .submission-table td {
+    font-size: 16px;
+    padding: 8px;
+  }
+}
+
+@media screen and (min-width: 1025px) {
+  .submission-table th,
+  .submission-table td {
+    font-size: 18px;
+    padding: 10px;
+  }
+}
