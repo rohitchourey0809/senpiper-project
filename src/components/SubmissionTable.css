@@ -1,22 +1,44 @@
 /* SubmissionTable.css */
-/* SubmissionTable.css */
 
-.submission-table-container {
-  display: flex;
-  justify-content: center;
+.submission-table-wrapper {
+   display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: auto; /* Set the width to 100% */
+  max-width: 800px; 
   align-items: center;
-  height: 100vh; /* Adjust this as needed */
+  align-content: center;
 }
 
-.submission-table {
+.header-container {
+  padding: 8px;
+  background-color: #f2f2f2;
+  border-bottom: 1px solid #ccc;
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
   width: 100%;
-  border-collapse: collapse;
-  border: 1px solid #ccc;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Other styles for the table */
+.filter-input {
+  flex: 1;
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 8px;
+}
 
+.search-icon {
+  font-size: 20px;
+  color: #aaa;
+}
+
+.content {
+  flex: 1;
+  /* overflow-y: auto; */
+}
 
 .submission-table {
   width: 100%;
@@ -35,7 +57,7 @@
   background-color: #f2f2f2;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .submission-table th,
   .submission-table td {
     font-size: 14px;
@@ -43,7 +65,7 @@
   }
 }
 
-@media screen and (min-width: 601px) and (max-width: 1024px) {
+@media screen and (min-width: 769px) and (max-width: 1024px) {
   .submission-table th,
   .submission-table td {
     font-size: 16px;
