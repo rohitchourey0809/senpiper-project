@@ -1,8 +1,4 @@
-// Form.js
 import React, { useState } from "react";
-import PhoneInput from "react-phone-number-input";
-import "react-phone-number-input/style.css";
-// import "./Form.css";
 
 function Form({ onSubmit }) {
   const [formData, setFormData] = useState({
@@ -52,6 +48,8 @@ function Form({ onSubmit }) {
     }
     if (!phone) {
       errors.phone = "Phone number is required.";
+    } else if (!isValidPhone(phone)) {
+      errors.phone = "Please enter a valid 10-digit phone number.";
     }
     return errors;
   };
@@ -60,6 +58,12 @@ function Form({ onSubmit }) {
     // Basic email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
+  };
+
+  const isValidPhone = (phone) => {
+    // Check if phone number has 10 digits
+    const phoneRegex = /^\d{10}$/;
+    return phoneRegex.test(phone);
   };
 
   return (
@@ -72,6 +76,9 @@ function Form({ onSubmit }) {
           name="name"
           value={formData.name}
           onChange={(e) => handleChange("name", e.target.value)}
+          minlength="2"
+          maxlength="20"
+         
         />
         {errors.name && <span className="error">{errors.name}</span>}
       </div>
@@ -83,18 +90,21 @@ function Form({ onSubmit }) {
           name="email"
           value={formData.email}
           onChange={(e) => handleChange("email", e.target.value)}
+          required
         />
         {errors.email && <span className="error">{errors.email}</span>}
       </div>
       <div className="form-group">
         <label htmlFor="phone">Phone:</label>
-        <PhoneInput
+        <input
+          type="tel"
           id="phone"
           name="phone"
-          defaultCountry="IN"
           value={formData.phone}
-          onChange={(value) => handleChange("phone", value)}
-          placeholder="Enter phone number"
+          onChange={(e) => handleChange("phone", e.target.value)}
+          pattern="[0-9]{10}"
+          maxLength={10}
+          required
         />
         {errors.phone && <span className="error">{errors.phone}</span>}
       </div>
