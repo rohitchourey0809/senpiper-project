@@ -76,9 +76,11 @@ function Form({ onSubmit }) {
           name="name"
           value={formData.name}
           onChange={(e) => handleChange("name", e.target.value)}
-          minlength="2"
-          maxlength="20"
-         
+          minLength="2"
+          maxLength="20"
+          pattern="[A-Za-z\s]+"
+          title="Please enter only letters (no numbers or special characters)"
+          required
         />
         {errors.name && <span className="error">{errors.name}</span>}
       </div>
